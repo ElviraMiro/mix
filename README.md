@@ -20,11 +20,11 @@ All events publish on RabbitMQ exchange: ```peatio.notice```
 
 with events: ```'accounts' and 'members'```
 
-- send to RabbitMQ common queue: ```peatio.notice.account``` with routing key ```{member.sn}```
+- send to RabbitMQ common queue: ```peatio.notice.account``` adding in payload ```{member.sn}```
 
 with events: ```'deposits', 'withdraws', 'deposit_address'```
 
-- send to RabbitMQ queues: ```peatio.notice.withdraw, peatio.notice.deposit, peatio.notice.deposit.address``` with routing key ```{member.sn}``` relatively
+- send to RabbitMQ queues: ```peatio.notice.withdraw, peatio.notice.deposit, peatio.notice.deposit.address``` adding in payload ```{member.sn}``` relatively
 
 2. Slanger message in channel ```market_global``` with event ```'ticker'```
 
@@ -32,4 +32,4 @@ with events: ```'deposits', 'withdraws', 'deposit_address'```
 
 3. Slanger message in channel ```market_{market.id}_global``` with event ```'update' and 'trades'```
 
-- send to RabbitMQ queue ```peatio.notice.market``` and routing key ```{market.id}```
+- send to RabbitMQ queue ```peatio.notice.market``` adding in payload ```{market.id}```
