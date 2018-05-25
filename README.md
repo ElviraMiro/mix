@@ -1,4 +1,4 @@
-## Add exchange/queue to RabbitMQ
+## Add exchange/queues to RabbitMQ
 
 ```yaml
 exchange:
